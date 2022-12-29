@@ -1,0 +1,474 @@
+/* ----- General Styling ----- */
+:root {
+  --accent: #16feff;
+  --primary: #fff;
+  --secondary: #afafb0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+  color: var(--primary);
+}
+
+h2 {
+  font-size: 2.3em;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.8em;
+}
+
+a {
+  text-decoration: none;
+  transform: 0.3s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+p {
+  color: var(--secondary);
+  line-height: 25px;
+  max-width: 30em;
+  margin: 1.5em 0;
+  font-size: 0.9em;
+}
+
+.container {
+  width: 80vw;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+section,
+footer {
+  padding: 6em 2.5em;
+}
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* ======== HEADER ========= */
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+header {
+  background: url(./images/background.jpg) no-repeat center;
+  background-size: cover;
+  padding: 1.5em 1.5em 2.5em 1.5em;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9;
+  margin-bottom: 6em;
+}
+
+.brand img {
+  width: 8em;
+}
+
+ul {
+  list-style: none;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 0 0.8em;
+  font-size: 1.1em;
+}
+
+.menu-btn {
+  color: var(--primary);
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.3s;
+  display: none;
+}
+
+.menu-btn:hover {
+  color: var(--accent);
+}
+
+.header-content {
+  display: flex;
+  gap: 2em;
+}
+
+.header-images {
+  display: flex;
+  gap: 3em;
+}
+
+.header-images div {
+  position: relative;
+}
+
+.header-images img {
+  width: 17vw;
+  filter: drop-shadow(0 0 1.5em rgb(0, 0, 0));
+}
+
+.img1 img {
+  margin-bottom: 4em;
+}
+
+.img2 img {
+  margin-top: 4em;
+}
+
+.title {
+  font-size: 4em;
+}
+
+.sub-heading {
+  color: var(--primary);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8em 2em;
+  border: 1px var(--accent) solid;
+  border-radius: 5em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+  min-width: 10em;
+  text-align: center;
+}
+
+.spec {
+  display: inline-block;
+  font-size: 0.9em;
+  color: var(--secondary);
+  padding: 0.5em 0;
+  border-bottom: 1px var(--secondary) solid;
+  position: absolute;
+}
+
+.img1 .spec {
+  right: -2em;
+  top: -3em;
+}
+
+.img2 .spec {
+  top: 1em;
+  left: 2em;
+}
+
+.spec::before {
+  content: "";
+  background: var(--secondary);
+  width: 6em;
+  height: 1px;
+  position: absolute;
+  bottom: -2.2em;
+  left: 50%;
+}
+
+.img1 .spec::before {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.img2 .spec::before {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.dot {
+  position: absolute;
+  bottom: -5em;
+  height: 1.8em;
+  width: 1.8em;
+  border: 1px var(--primary) solid;
+  border-radius: 50%;
+  animation: expand 1s ease-in-out infinite;
+}
+
+.img1 .dot {
+  left: 31%;
+}
+
+.img2 .dot {
+  left: 65%;
+}
+
+.dot::before,
+.pagination a::before {
+  content: "";
+  background: var(--accent);
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: inherit;
+}
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* ======== PAGINATION & SOCIAL MEDIA SIDEBARS ========= */
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+.pagination,
+.social-media {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4em;
+  height: 70%;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+
+.pagination {
+  left: 0;
+  border-right: 1px solid var(--secondary);
+}
+
+.pagination a {
+  display: block;
+  position: relative;
+  height: 1.3em;
+  width: 1.3em;
+  border-radius: 50%;
+  margin: 2em 0;
+}
+
+.pagination a::before {
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--primary);
+}
+
+.pagination a:hover:before {
+  background: var(--accent);
+}
+
+.pagination .active {
+  border: 1px solid var(--primary);
+}
+
+.pagination .active::before {
+  background: var(--accent);
+}
+
+.social-media {
+  right: 0;
+  border-left: 1px var(--secondary) solid;
+}
+
+.social-media li {
+  font-size: 1.1em;
+  margin: 2em 0;
+}
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* ======== ABOUT SECTION ========= */
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+.about {
+  background: linear-gradient(135deg, #252628, #17181a);
+}
+
+.about .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5em;
+}
+
+.about img {
+  width: 50%;
+  filter: drop-shadow(0 0 1.5em rgb(0, 0, 0, 0.5));
+}
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* ======== SWIPER SECTION ========= */
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+.slide {
+  max-width: 1250px;
+  margin: 0 auto;
+  position: relative;
+  padding: 4.5em;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  background: #17181a;
+  height: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img:only-child {
+  display: block;
+  height: 243px;
+  /* width: 243px; */
+  width: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--accent);
+}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* ======== PRODUCT SECTION ========= */
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+.product {
+  background: linear-gradient(135deg, #303134, #1f2123);
+}
+
+.product h2,
+.specs h2,
+.slide h2 {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.product .info > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.product img {
+  width: 20em;
+  justify-self: right;
+  margin-right: 6em;
+  padding: 6em 0;
+}
+
+.info-text {
+  padding-left: 6em;
+  border-left: 1px var(--accent) solid;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  position: relative;
+}
+
+.info-text::after,
+.info-text::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.info-text::before {
+  background: var(--accent);
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  left: -0.43em;
+}
+
+.info-text::after {
+  border: 1px var(--primary) solid;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  left: -0.97em;
+}
+
+.product .btn {
+  text-align: center;
+}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* ======== SPECS SECTION ========= */
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+.specs {
+  background: #17181a;
+}
+
+.specs .container > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.specs h4 {
+  font-size: 1.5em;
+}
+
+.specs h5 {
+  font-size: 1.2em;
+}
+
+.specs li {
+  color: var(--secondary);
+  font-size: 0.9em;
+  margin: 0.5em 0;
+}
+
+.specs span {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* ======== FOOTER SECTION ========= */
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+footer {
+  text-align: center;
+}
+
+.footer-menu {
+  margin-bottom: 2em;
+}
+
+.footer-menu li {
+  margin: 1em 0;
+  font-size: 1.2em;
+}
+
+.footer-social li {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+.footer-social li {
+  color: var(--accent);
+  font-size: 1.4em;
+}
+
+.footer-social li:hover {
+  color: var(--primary);
+}
+
+@keyframes expand {
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

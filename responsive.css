@@ -1,0 +1,109 @@
+@media screen and (max-width: 1000px) {
+  .header-content {
+    flex-direction: column;
+  }
+
+  .specs .container > div {
+    grid-template-columns: 1fr;
+  }
+
+  .header-images {
+    margin-top: 5em;
+    justify-content: center;
+  }
+
+  .header-images img {
+    width: 30vh;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .title {
+    font-size: 4.5em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .social-media {
+    display: none;
+  }
+
+  .pagination {
+    background: #111;
+    top: unset;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(50%);
+    border: none;
+    border-top: 1px solid var(--secondary);
+    height: 0;
+    width: 100%;
+  }
+
+  .pagination ul {
+    display: flex;
+    gap: 2em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .menu {
+    background-color: #17181a;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    padding: 0 4.5em;
+    margin-top: 5.5em;
+    overflow: hidden;
+    z-index: 3;
+    transition: 0.4s;
+  }
+
+  /* Toggle class used later on JAVASCRIPT */
+  .nav-bar .menu-open {
+    height: 13.5em;
+  }
+
+  .menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .about .container {
+    flex-direction: column;
+  }
+
+  .product .info > div {
+    grid-template-columns: 1fr;
+  }
+
+  .product .info-text {
+    border: none;
+    padding: 0;
+  }
+
+  .product img {
+    margin: 0;
+    justify-self: center;
+  }
+
+  .info-text::after,
+  .info-text::before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 14px;
+  }
+}
