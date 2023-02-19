@@ -16,7 +16,7 @@ This repository contains the code for the Logitech Product Website, a responsive
 To run this website locally, you need to have Git and a web browser installed on your machine. You can then clone this repository by running the following command in your terminal:
 
 ```bash
-  git clone https://github.com/yourusername/logitech-product-website.git
+  git clone https://github.com/Andrew-Tsegaye/logitech-product-website.git
 
 ```
 
